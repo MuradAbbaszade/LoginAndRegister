@@ -58,15 +58,9 @@ public class RegistrationController {
     @PostMapping
     public ModelAndView registerUserAccount(
             @ModelAttribute("user") @Valid UserDTO userDto, BindingResult result,
-            @RequestParam(value = "name", required = false) String name,
-            @RequestParam(value = "email", required = false) String email,
-            @RequestParam(value = "password", required = false) String password,
-            @RequestParam(value = "matchingPassword", required = false) String matchingPassword,
             HttpServletRequest request) throws Exception {
         try {
             if (result.hasErrors()) {
-                //PasswordMatches passwordMatches = null;
-                System.out.println(result.getAllErrors().get(0));
                 Object obj = result.getAllErrors().get(0);
                 ObjectError objectError = null;
                 if (obj instanceof FieldError) {

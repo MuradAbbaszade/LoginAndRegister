@@ -29,7 +29,6 @@ public class UserService implements IUserService {
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());
         user.setEmail(userDto.getEmail());
-        //user.setRoles(Arrays.asList("ROLE_USER"));
         return userDAO.insert(user);
     }
 
