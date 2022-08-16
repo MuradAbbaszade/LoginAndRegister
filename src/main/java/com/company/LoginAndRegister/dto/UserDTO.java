@@ -4,20 +4,25 @@
  * and open the template in the editor.
  */
 package com.company.LoginAndRegister.dto;
+import com.company.LoginAndRegister.annotation.PasswordMatches;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 /**
  *
  * @author roma-cervice
  */
+@PasswordMatches
 public class UserDTO {
-    @NotEmpty
+    @NotEmpty(message="Can't be empty")
+    @Size(min=2,max=15,message="Name size must be between 2 and 15")
     private String name;
-    @NotEmpty
+    @NotEmpty(message="Can't be empty")
+    @Size(min=11,max=35,message="Email size must be between 11 and 35")
     private String email;
-    @NotEmpty
+    @NotEmpty(message="Can't be empty")
+    @Size(min=3,max=25,message="Password size must be between 3 and 25")
     private String password;
     private String matchingPassword;
 

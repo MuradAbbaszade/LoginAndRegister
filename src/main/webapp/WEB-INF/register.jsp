@@ -12,6 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%
+            String message="";
+            if(request.getAttribute("message")!=null){
+            message = request.getAttribute("message").toString();
+        }%>
         <form action="register" method="POST">
             <input name="name" id="name" type="text"/>
             <br>
@@ -22,7 +27,7 @@
             <input name="matchingPassword" id="matchingPassword" type="password"/>
             <br>
             <button type="submit">Submit</button>
-            <label id="errormessage"><%= request.getAttribute("message") %></label>
+            <label id="errormessage"><%= message %></label>
         </form>
     </body>
 </html>

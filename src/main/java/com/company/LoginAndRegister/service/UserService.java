@@ -6,7 +6,6 @@
 package com.company.LoginAndRegister.service;
 
 import com.company.LoginAndRegister.dto.UserDTO;
-import com.company.LoginAndRegister.exception.UserAlreadyExistException;
 import com.company.daoImpl.UserDAOImpl;
 import com.company.entity.User;
 import javax.transaction.Transactional;
@@ -20,9 +19,9 @@ public class UserService implements IUserService {
     private UserDAOImpl userDAO;
     
     @Override
-    public User registerNewUserAccount(UserDTO userDto) throws UserAlreadyExistException{
+    public User registerNewUserAccount(UserDTO userDto) throws Exception{
         if (emailExists(userDto.getEmail())) {
-            throw new UserAlreadyExistException("There is an account with that email address: "
+            throw new Exception("There is an account with that email address: "
               + userDto.getEmail());
         }
         User user = new User();
