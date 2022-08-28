@@ -1,2 +1,2 @@
 web: java -jar target/LoginAndRegister.jar
---server.port=8081
+server.port=${PORT:8081}
