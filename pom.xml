@@ -11,7 +11,6 @@
     <groupId>com.company</groupId>
     <artifactId>LoginAndRegister</artifactId>
     <version>0.0.1</version>
-    <packaging>war</packaging>
     <name>LoginAndRegister</name>
     <description>Login and Register with spring security</description>
     <properties>
